@@ -17,12 +17,12 @@ async function getFeaturedProducts(): Promise<Product[]> {
 
 export default async function Home() {
   const [highlightedProduct, ...otherProducts] = await getFeaturedProducts();
-  console.log(highlightedProduct);
+  console.log(highlightedProduct.slug);
 
   return (
     <div className="grid max-h-[860px] grid-cols-9 grid-rows-6 gap-6">
       <Link
-        href={`/products/${highlightedProduct.slug}`}
+        href={`/product/${highlightedProduct.slug}`}
         className="group relative col-span-6 row-span-6 flex items-end justify-center overflow-hidden rounded-lg bg-zinc-900"
       >
         <Image
@@ -50,7 +50,7 @@ export default async function Home() {
         return (
           <Link
             key={product.slug}
-            href="/"
+            href={product.slug}
             className="group relative col-span-3 row-span-3 flex items-end justify-center overflow-hidden rounded-lg bg-zinc-900"
           >
             <Image

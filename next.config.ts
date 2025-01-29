@@ -1,8 +1,14 @@
 import type { NextConfig } from "next";
 
+// Define the Next.js configuration
 const nextConfig: NextConfig = {
   images: {
-    domains: ["github.com"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "github.com",
+      },
+    ],
   },
 };
 

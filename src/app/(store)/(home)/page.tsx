@@ -50,7 +50,7 @@ export default async function Home() {
         return (
           <Link
             key={product.slug}
-            href={product.slug}
+            href={`/product/${product.slug}`}
             className="group relative col-span-3 row-span-3 flex items-end justify-center overflow-hidden rounded-lg bg-zinc-900"
           >
             <Image

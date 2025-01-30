@@ -1,6 +1,7 @@
+import AddToCartButton from '@/components/add-to-cart-button'
 import { api } from "@/data/api";
 import { Product } from "@/data/types/product";
-import { ShoppingCart } from "lucide-react";
+
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -71,14 +72,13 @@ export default async function ProductPage({ params }: ProductProps) {
             })}
           </span>
           <span className="text-sm text-zinc-400">
-            12x installments of{" "}
+            Pay 12x installments of{" "}
             {(product.price / 12).toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
             })}
           </span>
         </div>
-
         <div className="mt-8 space-y-4">
           <span className="block font-semibold">Size</span>
           <div className="flex gap-2">
@@ -114,13 +114,7 @@ export default async function ProductPage({ params }: ProductProps) {
             </button>
           </div>
         </div>
-        <button
-          type="button"
-          className="mt-8 flex h-12 items-center justify-center rounded-full bg-emerald-600 font-semibold uppercase text-white"
-        >
-          <ShoppingCart className="mr-2 h-6 w-6" />
-          Add to cart
-        </button>
+        <AddToCartButton productId={product.id} />
       </div>
     </div>
   );

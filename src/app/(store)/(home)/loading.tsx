@@ -9,3 +9,5 @@ export default function HomeLoading() {
     </div>
   );
 }
+
+// installing cypress

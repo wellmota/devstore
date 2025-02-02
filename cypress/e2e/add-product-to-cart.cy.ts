@@ -22,7 +22,7 @@ describe("template spec", () => {
   });
 
   it("should be able to search for a product and add it to cart", () => {
-    cy.get("input[name=q]").type("moletom").parent("form").submit();
+    cy.searchByQuery("moletom");
     cy.get('a[href^="/product"]').first().click();
     cy.contains("Add to cart").click();
     cy.contains("Cart(1)").should("exist");

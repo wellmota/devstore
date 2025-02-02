@@ -25,6 +25,9 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
+      - name: Install Cypress
+        run: pnpm add cypress --save-dev
+
       - name: Setup pnpm cache
         uses: actions/cache@v3
         with:
